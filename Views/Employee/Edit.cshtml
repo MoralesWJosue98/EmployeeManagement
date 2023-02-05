@@ -1,0 +1,48 @@
+﻿@model Employee
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2> EDITAR EMPLEADO </h2>
+    </div>
+
+    <form method="post" asp-action="Edit">
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="NAME"> NOMBRE </label>
+                <input type="text" class="form-control mb-3" asp-for="NAME">
+                <span asp-validation-for="NAME" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="DESGINATION"> OCUPACIÓN </label>
+                <input type="text" class="form-control mb-3" asp-for="DESGINATION">
+                <span asp-validation-for="DESGINATION" class=" alert-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="ADDRESS"> DIRECCIÓN </label>
+                <input type="text" class="form-control mb-3" asp-for="ADDRESS">
+                <span asp-validation-for="ADDRESS" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="RecordCreatedOn"> FECHA DE CREACIÓN </label>
+                <input type="datetime-local" class="form-control" asp-for="RecordCreatedOn">
+                <span asp-validation-for="RecordCreatedOn" class=" alert-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i> ACTUALIZAR </button>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-lg btn-warning p-2"> Menú </a>
+
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
